@@ -1,0 +1,37 @@
+<section class="jumbotron text-center">
+        <div class="container my-5">
+          <h1 class="jumbotron-heading">Le projet du Gossip</h1>
+          <p class="lead text-muted">Ici les ragôts les plus croustillants de ta région</p>
+          <p>
+            <a href="/gossip" class="btn btn-primary my-2">Découvre tous les gossip !</a>
+            
+          </p>
+        </div>
+      </section>
+
+
+
+
+<% @user.each_with_index do |user, index| %>
+<div class="card align-self-center my-2" style="width: 100rem;">
+  <div class="card-body">
+    <h5 class="card-title">Les ragôts bien sales de <%= @user[index].first_name %> </h5>
+    <p class="card-text">Clique pour découvrir ce que raconte <%= @user[index].first_name %> !</p>
+
+
+				<button type="button" class="btn btn-outline-primary">
+					<%= link_to "#{@user[index].first_name}", "/user/#{@user[index].id}" %>
+				</button>
+
+				
+            <% @user[index].gossips.each do |gossip| %>
+			    <%= link_to "#{gossip.title}", "/gossip/#{gossip.id}" %>
+										<% end %>
+										</div>
+									</div>
+
+ <% end %>
+
+
+
+

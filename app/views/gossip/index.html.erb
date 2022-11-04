@@ -1,0 +1,18 @@
+<div class="container-fluid my-5">
+	<h3>Génial, tous les potins sont là !</h3>
+</div>
+<% @gossip.each_with_index do |gossip, index| %>
+<div class="card align-self-center my-2" style="width: 100rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= link_to "#{@gossip[index].title}", "/gossip/#{@gossip[index].id}" %>   </h5>
+    <p class="card-text"><%= @gossip[index].content %></p>
+
+
+				
+			
+			<ul> <%= @gossip[index].created_at %> </ul>
+
+										</div>
+									</div>
+
+ <% end %>
